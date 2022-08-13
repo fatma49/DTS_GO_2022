@@ -1,0 +1,14 @@
+{{ $nomor := 0 }}
+{{ range .task }}
+    <tr>
+        {{ $nomor = increment $nomor 1 }}
+        <td>{{ $nomor }}</td>
+        <td>{{ .detail }}</td>
+        <td>{{ .pegawai }}</td>
+        <td>{{ .deadline }}</td>
+        <td>
+            <button data-id="{{ .id }}" class="btn btn-danger btn-sm delete-task">Delete</button>
+            <button data-id="{{ .id }}" class="btn btn-warning btn-sm edit-task">Edit</button>
+        </td>
+    </tr>
+{{ end }}
